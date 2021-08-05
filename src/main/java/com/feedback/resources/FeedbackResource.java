@@ -3,6 +3,8 @@ package com.feedback.resources;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +13,7 @@ import com.feedback.repositories.FeedbackRepository;
 
 
 @RestController
-@RequestMapping
+@RequestMapping(value = "/feedback" )
 public class FeedbackResource {
 
 	@Autowired
@@ -19,8 +21,12 @@ public class FeedbackResource {
 	
 	//getmapping, postmapping, deletemapping e patchmapping
 	
-	public List<Feedback>listarFeedback(){
-		return repository.findAll();
+	@GetMapping
+	public ResponseEntity<List<Feedback>>listarFeedback(){
+		List<Feedback> list = repository.findAll();
+		
+		return ResponseEntity.ok().body(list);
+		
 	}
 	
 	
