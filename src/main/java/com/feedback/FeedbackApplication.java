@@ -23,8 +23,9 @@ public class FeedbackApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		Feedback feed = new Feedback(null, "Este é o primeiro feedback da aplicação.");
-		
+		Feedback feed2 = new Feedback(null, "Este é o teste de feedback da aplicação.");
 		repository.save(feed);
+		repository.save(feed2);
 		
 	}
 
