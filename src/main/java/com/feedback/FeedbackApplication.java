@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.feedback.entities.Feedback;
+import com.feedback.entities.Setor;
 import com.feedback.repositories.FeedbackRepository;
 
 @SpringBootApplication
@@ -22,8 +23,8 @@ public class FeedbackApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Feedback feed = new Feedback(null, "Este é o primeiro feedback da aplicação.");
-		Feedback feed2 = new Feedback(null, "Este é o teste de feedback da aplicação.");
+		Feedback feed = new Feedback(null, "Este é o primeiro feedback da aplicação.", Setor.CONTABILIDADE);
+		Feedback feed2 = new Feedback(null, "Este é o teste de feedback da aplicação.", Setor.DIRETORIA);
 		repository.save(feed);
 		repository.save(feed2);
 		

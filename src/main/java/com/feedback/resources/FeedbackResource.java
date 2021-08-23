@@ -35,6 +35,7 @@ public class FeedbackResource {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Feedback>findById(@PathVariable Long id){
 		Feedback feed = repository.findById(id).get();
+		
 		return ResponseEntity.ok().body(feed);
 	}
 	

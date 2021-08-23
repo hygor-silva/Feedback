@@ -17,15 +17,17 @@ public class Feedback implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String feedback;
+	private Setor setor;
 	
 	public Feedback() {
 		
 	}
 
-	public Feedback(Long id, String feedback) {
+	public Feedback(Long id, String feedback, Setor setor) {
 		super();
 		this.id = id;
 		this.feedback = feedback;
+		this.setor = setor;
 	}
 
 	public Long getId() {
@@ -42,6 +44,10 @@ public class Feedback implements Serializable{
 
 	public void setFeedback(String feedback) {
 		this.feedback = feedback;
+	}
+
+	public Setor getSetor() {
+		return setor;
 	}
 
 	@Override
