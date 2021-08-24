@@ -23,7 +23,7 @@ public class FeedbackResource {
 	private FeedbackRepository repository;
 	
 	//Lista todos os feedbacks cadastrados.
-	@GetMapping
+	@GetMapping("/feedback")
 	public ResponseEntity<List<Feedback>>listarFeedback(){
 		List<Feedback> list = repository.findAll();
 		
@@ -32,7 +32,7 @@ public class FeedbackResource {
 	}
 	
 	//Lista feedback pesquisado pelo Id
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/feedback/{id}")
 	public ResponseEntity<Feedback>findById(@PathVariable Long id){
 		Feedback feed = repository.findById(id).get();
 		
