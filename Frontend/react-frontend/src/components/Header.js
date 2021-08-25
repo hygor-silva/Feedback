@@ -1,7 +1,8 @@
 import React from 'react';
-import './Header.css';
+
 import { Link } from 'react-router-dom'
 import { AreaHeader } from './HeaderStyled';
+import './Header.css';
 
 
 export default () => {

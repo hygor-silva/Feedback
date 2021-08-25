@@ -4,18 +4,22 @@ export const AreaHeader = styled.div`
 
     height: 60px;
     backgroung-image: linear-gradient(to right, #FE5D26, #370d44);
-    color: #fff;
+    color: black;
+    backgroung-color: #000;
+    
 
     .container{
         padding: 5px 20px;
         display: flex;
         aling-items: center;
+        
+        
     }
 
     .logo{
         flex: 1;
         img{
-            width: 45px;
+            width: 150px;
         }
     }
 
