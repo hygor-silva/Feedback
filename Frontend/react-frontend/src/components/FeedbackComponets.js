@@ -2,50 +2,51 @@ import React from 'react';
 import FeedbackServices from '../services/FeedbackServices'
 
 class FeedbackComponents extends React.Component {
- 
-    constructor(props){
+
+    constructor(props) {
         super(props)
         this.state = {
-            feedback:[]
+            feedback: []
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         FeedbackServices.getFeedback().then((response) => {
-            this.setState({feedback: response.data})
+            this.setState({ feedback: response.data })
         });
     }
 
-    render (){
+    render() {
 
-        return(
+        return (
             <div>
-                <h1 className = "text-center">Feedback</h1>
-                <table className = "table-striped">
+                <h1 className="text-center">Feedback</h1>
+                <table className="table-striped">
                     <thead>
                         <tr>
-                            <td>Feedback Id</td>
-                            <td>Feedback</td>
+
                             <td>Setor</td>
-                            
+                            <td>Feedback</td>
+
+
                         </tr>
                     </thead>
                     <tbody>
                         {
                             this.state.feedback.map(
-                                feedback => 
-                                <tr key = {feedback.id}>
-                                    <td>
-                                        {feedback.id}
-                                    </td>
-                                    <td>
-                                        {feedback.feedback}
-                                    </td>
-                                    <td>
-                                        {feedback.setor}
-                                    </td>
+                                feedback =>
+                                    <tr key={feedback.id}>
 
-                                </tr>
+                                        <td>
+                                            {feedback.setor}
+                                        </td>
+
+                                        <td>
+                                            {feedback.feedback}
+                                        </td>
+
+
+                                    </tr>
                             )
                         }
                     </tbody>
@@ -55,7 +56,7 @@ class FeedbackComponents extends React.Component {
             </div>
         )
     }
-    
+
 }
 
 export default FeedbackComponents
