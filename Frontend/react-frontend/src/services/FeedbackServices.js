@@ -8,9 +8,5 @@ class FeedbackServices {
         return axios.get(FEEDBACK_REST_API_URL);
     }
 }
-
-
-
 export default new FeedbackServices();
-
 
