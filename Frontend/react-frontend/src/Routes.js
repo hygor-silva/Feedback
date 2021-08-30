@@ -20,7 +20,7 @@ export default () => {
                 Feedback Completo
             </Route>
             <Route exact path = "/config">
-                <Config></Config>
+                <Config>Configurações</Config>
             </Route>
         </Switch>
     )

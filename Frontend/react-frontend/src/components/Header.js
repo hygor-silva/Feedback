@@ -7,6 +7,7 @@ import './Header.css';
 
 export default () => {
     return(
+        //usar um switch para definir quais serão as opções de navegação.
         <AreaHeader>
         
             <div className= "container">

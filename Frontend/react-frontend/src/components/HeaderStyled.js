@@ -18,8 +18,9 @@ export const AreaHeader = styled.div`
 
     .logo{
         flex: 1;
+        aling-items: left;
         img{
-            width: 150px;
+            width: 130px;
         }
     }
 
